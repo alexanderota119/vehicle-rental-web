@@ -1,0 +1,74 @@
+.login-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.login-hero {
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  align-self: stretch;
+  min-height: 100vh;
+  flex-direction: column;
+  background-size: cover;
+  justify-content: flex-start;
+  object-position: center;
+  background-image: url("/playground_assets/iqx-azmi-jn01msrsupe-unsplash%20%5B1%5D%202-1500h.png");
+  background-position: top left;
+  background-blend-mode: overlay;
+}
+.login-container1 {
+  width: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+}
+.login-text {
+  font-size: 2rem;
+  align-self: center;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.login-textinput {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-halfunit);
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+.login-textinput1 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-halfunit);
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+.login-button {
+  width: auto;
+  margin: var(--dl-space-space-unit);
+  background-color: #ffcd61;
+}
+.login-navlink {
+  text-decoration: underline;
+}
+@media(max-width: 767px) {
+  .login-hero {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .login-text {
+    text-align: center;
+  }
+}
+@media(max-width: 479px) {
+  .login-hero {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .login-container1 {
+    grid-template-columns: 1fr;
+  }
+}
