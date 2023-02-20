@@ -40,8 +40,8 @@ const Home = (props) => {
         <button className="home-button button">Search</button>
       </div>
       <Vehicle
-        endpoint="all"
-        listtitle="Explore our vehicle"
+        endpoint="sort?by=count&order=desc"
+        listtitle="Our popular vehicles"
         rootClassName="vehicle-root-class-name"
       ></Vehicle>
       <div className="home-testimonial">

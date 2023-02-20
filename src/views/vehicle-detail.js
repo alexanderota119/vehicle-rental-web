@@ -14,7 +14,7 @@ const VehicleDetail = () => {
   async function getData() {
     try {
       const response = await axios.get(
-        `http://localhost:3001/vehicle/${params.id}`
+        `${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/vehicle/slug/${params.slug}`
       );
       console.log(response);
       setData(response.data.data);
@@ -44,12 +44,21 @@ const VehicleDetail = () => {
           <div className="vehicle-detail-container3">
             <div className="vehicle-detail-container4">
               <span className="vehicle-detail-text2">
-
-
-              <CurrencyFormat value={vehicle.price} displayType={"text"} thousandSeparator={"."} decimalSeparator={","} prefix={"Rp"}/> / day
+                <CurrencyFormat
+                  value={vehicle.price}
+                  displayType={"text"}
+                  thousandSeparator={"."}
+                  decimalSeparator={","}
+                  prefix={"Rp"}
+                />{" "}
+                / day
               </span>
-              <span className="vehicle-detail-text3">Location: {vehicle.location}</span>
-              <span className="vehicle-detail-text4">Category: {vehicle.category}</span>
+              <span className="vehicle-detail-text3">
+                Location: {vehicle.location}
+              </span>
+              <span className="vehicle-detail-text4">
+                Category: {vehicle.category}
+              </span>
               <span className="vehicle-detail-text5">
                 <span className="vehicle-detail-text6">Capacity:</span>
                 <span> 2</span>

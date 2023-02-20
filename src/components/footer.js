@@ -50,7 +50,9 @@ const Footer = (props) => {
             <span className="footer-text06">Vehicles</span>
             <span className="footer-text07">Car</span>
             <span className="footer-text08">Van</span>
+            <span className="footer-text08">Bike</span>
             <span className="">Motorbike</span>
+
           </div>
         </div>
         <div className="footer-container4">

@@ -32,7 +32,7 @@ const Vehicle = (props) => {
         <div className="vehicle-container1">
 
         {vehicle.map((e) => {
-            return <Card id={e.vehicle_id} name={e.name} category={e.category} location={e.location} image_src={e.image} price={e.price}/>;
+            return <Card id={e.vehicle_id} name={e.name} category={e.category} location={e.location} image_src={e.image} price={e.price} slug={e.slug} created_at={e.created_at}/>;
           })}
 
 

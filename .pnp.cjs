@@ -30,6 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@craco/craco", "virtual:c65e5fc56bc5f834da6bccade0b4b840a4cab2662fa010ca7f30b0f34b8e95a50958686d71fe10365554d9ef36eeb2ffcebfaa7c86453d0235eed95e32d4043a#npm:7.0.0"],\
             ["axios", "npm:1.3.3"],\
+            ["date-fns", "npm:2.29.3"],\
             ["dotenv", "npm:16.0.3"],\
             ["prop-types", "npm:15.7.2"],\
             ["react", "npm:17.0.2"],\
@@ -7163,6 +7164,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["abab", "npm:2.0.6"],\
             ["whatwg-mimetype", "npm:2.3.0"],\
             ["whatwg-url", "npm:8.7.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["date-fns", [\
+        ["npm:2.29.3", {\
+          "packageLocation": "./.yarn/cache/date-fns-npm-2.29.3-fef7e3c72c-e01cf5b62a.zip/node_modules/date-fns/",\
+          "packageDependencies": [\
+            ["date-fns", "npm:2.29.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -16726,6 +16736,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vehicle-rental-frontend", "workspace:."],\
             ["@craco/craco", "virtual:c65e5fc56bc5f834da6bccade0b4b840a4cab2662fa010ca7f30b0f34b8e95a50958686d71fe10365554d9ef36eeb2ffcebfaa7c86453d0235eed95e32d4043a#npm:7.0.0"],\
             ["axios", "npm:1.3.3"],\
+            ["date-fns", "npm:2.29.3"],\
             ["dotenv", "npm:16.0.3"],\
             ["prop-types", "npm:15.7.2"],\
             ["react", "npm:17.0.2"],\

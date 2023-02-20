@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom'
 
 import PropTypes from "prop-types";
 import CurrencyFormat from "react-currency-format";
+import { format, parseISO } from 'date-fns'
 
 import "./card.css";
 
 const Card = (props) => {
   return (
-    <Link to={`/vehicle/${props.id}`}>
+    <Link to={`/vehicle/${props.slug}`}>
       <div className={`card-blog-post-card ${props.rootClassName} `}>
         <img alt="image" src={props.image_src} className="card-image" />
         <div className="card-container">
@@ -29,7 +30,7 @@ const Card = (props) => {
             <div className="card-profile">
               <span className="card-text3">{props.location}</span>
             </div>
-            <span className="card-text4">Available</span>
+            <span className="card-text4">{format(parseISO(props.created_at), 'PP')}</span>
           </div>
         </div>
       </div>
