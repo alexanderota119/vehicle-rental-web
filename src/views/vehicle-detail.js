@@ -1,22 +1,29 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
 import CurrencyFormat from "react-currency-format";
+import useApi from "../helpers/useApi";
 
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "./vehicle-detail.css";
 
 const VehicleDetail = () => {
+  const api = useApi()
   const [vehicle, setData] = useState({});
   const params = useParams();
 
   async function getData() {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/vehicle/slug/${params.slug}`
-      );
-      console.log(response);
+
+
+      const response = await api.requests({
+        method: 'GET',
+        url: `/vehicle/slug/${params.slug}`
+      })
+      // const response = await axios.get(
+      //   `${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/vehicle/slug/${params.slug}`
+      // );
+
       setData(response.data.data);
     } catch (error) {
       console.log(error);

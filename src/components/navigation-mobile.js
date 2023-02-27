@@ -1,13 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import PropTypes from 'prop-types'
+import "./navigation-mobile.css";
 
-import './navigation-mobile.css'
-
-const NavigationMobile = (props) => {
+const NavigationMobile = () => {
   return (
-    <nav className={`navigation-mobile-nav ${props.rootClassName} `}>
+    <nav className={`navigation-mobile-nav`}>
       <Link to="/" className="navigation-mobile-link">
         Home
       </Link>
@@ -22,15 +20,7 @@ const NavigationMobile = (props) => {
         Register
       </Link>
     </nav>
-  )
-}
+  );
+};
 
-NavigationMobile.defaultProps = {
-  rootClassName: '',
-}
-
-NavigationMobile.propTypes = {
-  rootClassName: PropTypes.string,
-}
-
-export default NavigationMobile
+export default NavigationMobile;

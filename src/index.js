@@ -1,26 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./style.css";
+import App from "./router";
+import store from "./store";
+import { Provider } from "react-redux";
 
-import './style.css'
-import Register from './views/register'
-import Explore from './views/explore'
-import Login from './views/login'
-import Home from './views/home'
-import VehicleDetail from './views/vehicle-detail';
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+//...
+let persistor = persistStore(store);
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/explore" element={<Explore />}/>
-        <Route path="/login" element={<Login />}/>
-        <Route path="/register" element={<Register />}/>
-        <Route path="/vehicle/:slug" element={<VehicleDetail />}/>       
-      </Routes>
-    </BrowserRouter>
-  );
-}
-
-ReactDOM.render(<App />, document.getElementById('app'))
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>
+);

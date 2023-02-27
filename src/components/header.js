@@ -1,18 +1,44 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, setData } from "../store/reducer/user";
+import useApi from "../helpers/useApi";
 
-import PropTypes from 'prop-types'
+import NavigationLinks from "./navigation-links";
+import NavigationMobile from "./navigation-mobile";
+import "./header.css";
 
-import NavigationLinks from './navigation-links'
-import NavigationMobile from './navigation-mobile'
-import './header.css'
+const Header = () => {
+  const { isAuth, data } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const api = useApi();
 
-const Header = (props) => {
+  const getUser = async () => {
+    try {
+      const { data } = await api.requests({
+        method: "GET",
+        url: "/user/",
+      });
+      dispatch(setData(data.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (isAuth) {
+      getUser();
+    }
+  }, [isAuth]);
+
+  const doLogout = () => {
+    dispatch(logout(data.Token));
+  };
+
+  const full_name = data.full_name || "default";
+
   return (
-    <header
-      data-role="Header"
-      className={`header-header ${props.rootClassName} `}
-    >
+    <header data-role="Header" className={`header-header`}>
       <img
         alt="logo"
         src="/playground_assets/logo%20%5B1%5D-1500w.png"
@@ -25,12 +51,25 @@ const Header = (props) => {
         ></NavigationLinks>
       </div>
       <div className="header-btn-group">
-        <Link to="/login" className="header-login button">
-          Login
-        </Link>
-        <Link to="/register" className="header-register button">
-          Register
-        </Link>
+        {!isAuth ? (
+          <div>
+            <Link to="/login" className="header-login button">
+              Login
+            </Link>
+            <Link to="/register" className="header-register button">
+              Register
+            </Link>
+          </div>
+        ) : (
+          <div>
+            <Link to="" className="header-login button">
+              Welcome {full_name}
+            </Link>
+            <Link onClick={doLogout} className="header-register button">
+              Logout
+              </Link>
+          </div>
+        )}
       </div>
       <div data-role="BurgerMenu" className="header-burger-menu">
         <svg viewBox="0 0 1024 1024" className="header-icon">
@@ -84,15 +123,7 @@ const Header = (props) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-Header.defaultProps = {
-  rootClassName: '',
-}
-
-Header.propTypes = {
-  rootClassName: PropTypes.string,
-}
-
-export default Header
+export default Header;

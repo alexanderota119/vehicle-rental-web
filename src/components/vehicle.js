@@ -1,19 +1,28 @@
 import React, { useEffect, useState } from "react";
-
-import PropTypes from "prop-types";
-import axios from "axios";
-
+import useApi from "../helpers/useApi";
 import Card from "./card";
 import "./vehicle.css";
 
 const Vehicle = (props) => {
 
 
+  const api = useApi()
+
   const [vehicle, setVehicle] = useState([]);
 
   async function getData() {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/vehicle/${props.endpoint}`);
+      const response = await api.requests({
+        method: 'GET',
+        url: `/vehicle/${props.endpoint}`
+      })
+
+
+    //   const { data } = await api.requests({
+    //     method: 'GET',
+    //     url: '/products'
+    // })
+      // const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/vehicle/${props.endpoint}`);
 
       setVehicle(response.data.data);
     } catch (error) {
@@ -40,16 +49,6 @@ const Vehicle = (props) => {
       </div>
     </div>
   );
-};
-
-Vehicle.defaultProps = {
-  listtitle: "Vehicle",
-  rootClassName: "",
-};
-
-Vehicle.propTypes = {
-  listtitle: PropTypes.string,
-  rootClassName: PropTypes.string,
 };
 
 export default Vehicle;

@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-
-import PropTypes from "prop-types";
 import CurrencyFormat from "react-currency-format";
 import { format, parseISO } from 'date-fns'
 
@@ -36,26 +34,6 @@ const Card = (props) => {
       </div>
     </Link>
   );
-};
-
-Card.defaultProps = {
-  location: "Location",
-  name: "Vehicle name",
-  category: "Category",
-  image_src:
-    "https://images.unsplash.com/photo-1547841243-eacb14453cd9?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDIyfHxjaXR5fGVufDB8fHx8MTYyNjE4NjYxMg&ixlib=rb-1.2.1&w=1500",
-  rootClassName: "",
-  price: " / day",
-};
-
-Card.propTypes = {
-  location: PropTypes.string,
-  name: PropTypes.string,
-  category: PropTypes.string,
-  image_src: PropTypes.string,
-  rootClassName: PropTypes.string,
-  link: PropTypes.string,
-  price: PropTypes.string,
 };
 
 export default Card;

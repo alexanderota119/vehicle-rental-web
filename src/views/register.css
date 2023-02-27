@@ -32,6 +32,14 @@
   align-self: center;
   margin-bottom: var(--dl-space-space-twounits);
 }
+.register-text1 {
+  color: var(--dl-color-gray-black);
+  padding-top: var(--dl-space-space-halfunit);
+  padding-bottom: var(--dl-space-space-halfunit);
+}
+.register-navlink {
+  text-decoration: underline;
+}
 .register-textinput {
   width: auto;
   height: auto;
@@ -50,13 +58,28 @@
   margin-top: var(--dl-space-space-halfunit);
   margin-bottom: var(--dl-space-space-halfunit);
 }
+.register-select {
+  width: 231px;
+  height: auto;
+  margin-top: var(--dl-space-space-halfunit);
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+.register-textinput3 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-halfunit);
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+.register-textarea {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-halfunit);
+  margin-bottom: var(--dl-space-space-halfunit);
+}
 .register-button {
   width: auto;
   margin: var(--dl-space-space-unit);
   background-color: #ffcd61;
-}
-.register-navlink {
-  text-decoration: underline;
 }
 @media(max-width: 767px) {
   .register-hero {

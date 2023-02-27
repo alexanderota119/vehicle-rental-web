@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import { Helmet } from 'react-helmet'
+import { Helmet } from "react-helmet";
 
-import Header from '../components/header'
-import Vehicle from '../components/vehicle'
-import Footer from '../components/footer'
-import './home.css'
+import Header from "../components/header";
+import Vehicle from "../components/vehicle";
+import Footer from "../components/footer";
+import "./home.css";
 
-const Home = (props) => {
+const Home = () => {
   return (
     <div className="home-container">
       <Helmet>
@@ -44,6 +44,22 @@ const Home = (props) => {
         listtitle="Our popular vehicles"
         rootClassName="vehicle-root-class-name"
       ></Vehicle>
+        <Vehicle
+        endpoint="category/car"
+        listtitle="Cars"
+        rootClassName="vehicle-root-class-name"
+      ></Vehicle>
+
+      <Vehicle
+        endpoint="category/motorbike"
+        listtitle="Motorbike"
+        rootClassName="vehicle-root-class-name"
+      ></Vehicle>
+      <Vehicle
+        endpoint="category/van"
+        listtitle="Van"
+        rootClassName="vehicle-root-class-name2"
+      ></Vehicle>
       <div className="home-testimonial">
         <h2 className="home-text2">Testimonials</h2>
         <img
@@ -76,7 +92,7 @@ const Home = (props) => {
       </div>
       <Footer rootClassName="footer-root-class-name2"></Footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
