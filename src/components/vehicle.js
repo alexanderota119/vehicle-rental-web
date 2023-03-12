@@ -34,6 +34,15 @@ const Vehicle = (props) => {
     getData();
   }, []);
 
+  useEffect(() => {
+    if (props.search) {
+      getData();
+    }
+
+  }, [props.search]);
+
+  console.log(props.search)
+
   return (
     <div className={`vehicle-vehicle ${props.rootClassName} `}>
       <div className="vehicle-container">

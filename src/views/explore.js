@@ -8,10 +8,15 @@ import "./explore.css";
 const Explore = () => {
   const [valueSearch, setSearch] = useState("");
 
+  const [doSearch, setdoSearch] = useState(false);
+
   const inputSearch = (el) => {
     setSearch(el.target.value);
   };
-  console.log(valueSearch);
+
+  const onSearch = () => {
+    setdoSearch(true)
+  }
 
   return (
     <div className="explore-container">
@@ -23,7 +28,11 @@ const Explore = () => {
           className="explore-textinput input"
           onChange={inputSearch}
         />
-        <button className="explore-button input">Search</button>
+        
+        <button className="explore-button input" onClick={onSearch}>Search</button>
+
+
+
         <select className="explore-select input">
           <option value="Sort">SORT</option>
           <option value="name">Name</option>
@@ -38,13 +47,9 @@ const Explore = () => {
       </div>
       <Vehicle
         rootClassName="vehicle-root-class-name1"
-        endpoint="all"
+        endpoint={`search?s=${valueSearch}`}
         listtitle="Our Vehicles"
-      ></Vehicle>
-      <Vehicle
-        rootClassName="vehicle-root-class-name1"
-        endpoint="search?s=honda"
-        listtitle="Our Vehicles"
+        search={doSearch}
       ></Vehicle>
       <Footer rootClassName="footer-root-class-name"></Footer>
     </div>
