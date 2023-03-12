@@ -24,7 +24,7 @@ Vehicle Rental is a two-sided marketplace app for renting vehicles. The primary 
 1. Clone the repository
 
    ```bash
-    git clone https://github.com/rfauzi44/vehicle-rental-web.git
+   git clone https://github.com/rfauzi44/vehicle-rental-web.git
    ```
 
 2. Install dependencies
@@ -45,8 +45,9 @@ Vehicle Rental is a two-sided marketplace app for renting vehicles. The primary 
    npm start
    ```
 
-5. You are all set!
+5. Your browser will automatically open
 
    ```bash
    View the website at: http://localhost:3000
    ```
+🌟 You are all set!
