@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Badges from "../components/badge";
+
 
 import './footer.css'
 
@@ -71,6 +73,10 @@ const Footer = (props) => {
           </div>
         </div>
       </div>
+      <div>
+      {/* your website's content */}
+      <Badges />
+    </div>
     </footer>
   )
 }
