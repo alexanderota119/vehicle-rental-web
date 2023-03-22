@@ -74,7 +74,6 @@ const Footer = (props) => {
         </div>
       </div>
       <div>
-      {/* your website's content */}
       <Badges />
     </div>
     </footer>
