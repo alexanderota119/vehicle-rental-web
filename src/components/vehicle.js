@@ -17,13 +17,6 @@ const Vehicle = (props) => {
         url: `/vehicle/${props.endpoint}`
       })
 
-
-    //   const { data } = await api.requests({
-    //     method: 'GET',
-    //     url: '/products'
-    // })
-      // const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/vehicle/${props.endpoint}`);
-
       setVehicle(response.data.data);
     } catch (error) {
       console.log(error);
@@ -37,11 +30,20 @@ const Vehicle = (props) => {
   useEffect(() => {
     if (props.search) {
       getData();
+      // props.search = false
     }
 
   }, [props.search]);
 
-  console.log(props.search)
+  useEffect(() => {
+    if (props.sort) {
+      getData();
+      // props.sort = false
+    }
+
+  }, [props.sort]);
+
+  // console.log(props.search)
 
   return (
     <div className={`vehicle-vehicle ${props.rootClassName} `}>
