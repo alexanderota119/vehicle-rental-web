@@ -1,6 +1,6 @@
 # Vehicle Rental
 
-Vehicle Rental is a two-sided marketplace app for renting vehicles. The primary feature is consumers can rent vehicles while renters can offer their vehicles for rent. This Web App was built using ReactJS and Redux for state management.
+Vehicle Rental is a two-sided marketplace app for renting vehicles. This Web App built with ReactJS and Redux for state management.
 
 ## 🔥 Showcase
 
@@ -15,7 +15,6 @@ Vehicle Rental is a two-sided marketplace app for renting vehicles. The primary 
 ## 💻 Built with
 
 - [ReactJS](https://github.com/facebook/react) for frontend framework
-- [create-react-app](https://github.com/facebook/create-react-app) for generate project boilerplate
 - [Redux (with persist) ](https://github.com/reduxjs/react-redux) for state management
 - [Axios](https://github.com/axios/axios) for handling requests and responses to API
 
